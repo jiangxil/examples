@@ -1,0 +1,25 @@
+project: sample-app
+train:
+  framework: tensorflow
+  tensorflow:
+    distributed: false
+    tensorboard: $OUTPUT_DIR
+  image:
+    name: tensorflow/tensorflow:1.1.0
+  resources:
+    cpus: 2
+    mem: 4096
+    gpus: 0
+  params:
+    num-epochs:
+      range:
+        min: 3
+        max: 5
+        step: 1
+    embedding-size:
+      - 16
+      - 32
+  hyperparams:
+    max-parallel-experiments: 2
+  run:
+    - python run.py --num-epochs {{num-epochs}} --num-layers 4 --embedding-size {{embedding-size}}  --verbosity INFO --job-dir $OUTPUT_DIR

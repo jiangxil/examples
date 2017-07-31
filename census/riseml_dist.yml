@@ -1,0 +1,25 @@
+project: sample-app
+train:
+  image:
+    name: tensorflow/tensorflow:1.2.0
+  framework: tensorflow
+  tensorflow:
+    distributed: true
+    ps-count: 1
+    worker-count: 2
+    tensorboard: $OUTPUT_DIR
+  resources:
+    master:
+      cpus: 2
+      mem: 4096
+      gpus: 0
+    ps:
+      cpus: 2
+      mem: 4096
+      gpus: 0
+    worker:
+      cpus: 2
+      mem: 4096
+      gpus: 0
+  run:
+    - python run.py --num-epochs 5 --num-layers 4 --embedding-size 32  --verbosity INFO --job-dir $OUTPUT_DIR
