@@ -1,4 +1,4 @@
-project: sample-app
+project: census-example
 train:
   framework: tensorflow
   tensorflow:

@@ -1,0 +1,28 @@
+project: cifar10-example
+train:
+  framework: tensorflow
+  tensorflow:
+    distributed: false
+    tensorboard: $OUTPUT_DIR
+  image:
+    name: tensorflow/tensorflow:1.2.1-gpu
+    install: 
+    - pip install scipy
+  resources:
+    cpus: 2
+    mem: 4096
+    gpus: 1
+  params:
+    lr:
+      - 0.0001
+      - 0.001
+    lr-decay:
+      - 1e-6
+      - 1e-7
+    epochs:
+      - 2
+      - 4
+  hyperparams:
+    max-parallel-experiments: 2
+  run:
+    - python cifar10.py /data/cifar10 --epochs {{epochs}} --lr {{lr}} --lr-decay {{lr-decay}} --tensorboard-dir $OUTPUT_DIR
