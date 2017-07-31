@@ -5,7 +5,7 @@ train:
     distributed: false
     tensorboard: $OUTPUT_DIR
   image:
-    name: tensorflow/tensorflow:1.1.0
+    name: tensorflow/tensorflow:1.2.0
   resources:
     cpus: 2
     mem: 4096

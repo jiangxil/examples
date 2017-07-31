@@ -1,7 +1,7 @@
 project: sample-app
 train:
   image:
-    name: tensorflow/tensorflow:1.1.0
+    name: tensorflow/tensorflow:1.2.0
   framework: tensorflow
   tensorflow:
     distributed: true
