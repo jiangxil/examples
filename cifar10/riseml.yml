@@ -1,0 +1,16 @@
+project: sample-app
+train:
+  framework: tensorflow
+  tensorflow:
+    distributed: false
+    tensorboard: $OUTPUT_DIR
+  image:
+    name: tensorflow/tensorflow:1.2.1-gpu
+    install: 
+    - pip install scipy
+  resources:
+    cpus: 2
+    mem: 4096
+    gpus: 1
+  run:
+    - python cifar10.py /data/cifar10 --epochs 20 --tensorboard-dir $OUTPUT_DIR
