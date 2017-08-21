@@ -3,7 +3,7 @@ train:
   framework: tensorflow
   tensorflow:
     distributed: false
-    tensorboard: $OUTPUT_DIR
+    tensorboard: true
   image:
     name: tensorflow/tensorflow:1.2.1-gpu
     install: 
