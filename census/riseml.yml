@@ -3,12 +3,11 @@ train:
   framework: tensorflow
   tensorflow:
     distributed: false
-    tensorboard: $OUTPUT_DIR
+    tensorboard: true
   image:
     name: tensorflow/tensorflow:1.2.0
   resources:
     cpus: 2
     mem: 4096
     gpus: 0
-  run:
-    - python run.py --num-epochs 2 --num-layers 4 --embedding-size 32  --verbosity INFO --job-dir $OUTPUT_DIR
+  run: python run.py --num-epochs 2 --num-layers 4 --embedding-size 32  --verbosity INFO --job-dir $OUTPUT_DIR

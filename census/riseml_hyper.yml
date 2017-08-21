@@ -3,7 +3,7 @@ train:
   framework: tensorflow
   tensorflow:
     distributed: false
-    tensorboard: $OUTPUT_DIR
+    tensorboard: true
   image:
     name: tensorflow/tensorflow:1.2.0
   resources:
@@ -19,7 +19,6 @@ train:
     embedding-size:
       - 16
       - 32
-  hyperparams:
-    max-parallel-experiments: 2
+  concurrent-experiments: 2
   run:
     - python run.py --num-epochs {{num-epochs}} --num-layers 4 --embedding-size {{embedding-size}}  --verbosity INFO --job-dir $OUTPUT_DIR

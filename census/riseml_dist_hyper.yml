@@ -7,7 +7,7 @@ train:
     distributed: true
     ps-count: 1
     worker-count: 2
-    tensorboard: $OUTPUT_DIR
+    tensorboard: true
   resources:
     master:
       cpus: 2
@@ -28,7 +28,6 @@ train:
     embedding-size:
       - 16
       - 32
-  hyperparams:
-    max-parallel-experiments: 1
+  concurrent-experiments: 1
   run:
     - python run.py --num-epochs {{num-epochs}} --num-layers 4 --embedding-size {{embedding-size}}  --verbosity INFO --job-dir $OUTPUT_DIR

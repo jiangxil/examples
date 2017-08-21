@@ -7,7 +7,7 @@ train:
     distributed: true
     ps-count: 1
     worker-count: 2
-    tensorboard: $OUTPUT_DIR
+    tensorboard: true
   resources:
     master:
       cpus: 2
