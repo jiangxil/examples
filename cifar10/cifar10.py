@@ -22,6 +22,13 @@ import numpy as np
 import argparse
 
 
+def download_data(num_classes=10):
+    (x_train, y_train), (x_test, y_test) = cifar10.load_data()
+    y_train = keras.utils.to_categorical(y_train, num_classes)
+    y_test = keras.utils.to_categorical(y_test, num_classes)
+    return (x_train, y_train), (x_test, y_test)
+
+
 def get_data(path, num_classes=10):
     num_train_samples = 50000
   
@@ -176,7 +183,7 @@ if __name__ == '__main__':
                         help='Where to output tensorboard summaries')
                         
     args = parser.parse_args()
-    xy_train, xy_test = get_data(args.data)
+    xy_train, xy_test = download_data()
     input_shape = xy_train[0].shape[1:]
     model = get_model(input_shape, args.lr, args.lr_decay)
     print('Learning rate: %s' % (args.lr))
