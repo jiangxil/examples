@@ -22,7 +22,6 @@ train:
     epochs:
       - 2
       - 4
-  hyperparams:
-    max-parallel-experiments: 2
+  concurrent-experiments: 2
   run:
-    - python cifar10.py /data/cifar10 --epochs {{epochs}} --lr {{lr}} --lr-decay {{lr-decay}} --tensorboard-dir $OUTPUT_DIR
+    - python cifar10.py --epochs {{epochs}} --lr {{lr}} --lr-decay {{lr-decay}} --tensorboard-dir $OUTPUT_DIR
