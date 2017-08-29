@@ -7,7 +7,7 @@ train:
   image:
     name: tensorflow/tensorflow:1.2.0
   resources:
-    cpus: 2
+    cpus: 1
     mem: 4096
     gpus: 0
   params:

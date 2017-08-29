@@ -10,15 +10,15 @@ train:
     tensorboard: true
   resources:
     master:
-      cpus: 2
+      cpus: .2
       mem: 4096
       gpus: 0
     ps:
-      cpus: 2
+      cpus: .2
       mem: 4096
       gpus: 0
     worker:
-      cpus: 2
+      cpus: .2
       mem: 4096
       gpus: 0
   run:
