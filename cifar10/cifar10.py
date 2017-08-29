@@ -165,6 +165,7 @@ def save_model(model, save_dir, filename='keras_cifar10_trained_model.h5'):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Train on CIFAR-10.')
     parser.add_argument('data', type=str,
+                        nargs='?',
                         help='path to CIFAR-10 data')
     parser.add_argument('--lr', type=float,
                         default=0.0001,
@@ -183,7 +184,10 @@ if __name__ == '__main__':
                         help='Where to output tensorboard summaries')
                         
     args = parser.parse_args()
-    xy_train, xy_test = download_data()
+    if args.data is None:
+        xy_train, xy_test = download_data()
+    else:
+        xy_train, xy_test = get_data(args.data)
     input_shape = xy_train[0].shape[1:]
     model = get_model(input_shape, args.lr, args.lr_decay)
     print('Learning rate: %s' % (args.lr))

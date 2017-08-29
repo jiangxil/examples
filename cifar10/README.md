@@ -6,7 +6,7 @@ Supports
  - hyperparemeter search
 
 The default is to download the training data from inside the container.
-To change this switch download_data with get_data in the code.
+To change this [ass DATA_DIR as below.
 
 To download data:
 ```
