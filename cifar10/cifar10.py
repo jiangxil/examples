@@ -179,11 +179,8 @@ if __name__ == '__main__':
     parser.add_argument('--augment-data', type=bool,
                         default=True,
                         help='Whether to augment data')
-    parser.add_argument('--tensorboard-dir', type=str,
-                        default='tensorboard',
-                        help='Where to output tensorboard summaries')
-                        
     args = parser.parse_args()
+    tensorboard_dir = os.environ.get('OUTPUT_DIR', 'tensorboard')
     if args.data is None:
         xy_train, xy_test = download_data()
     else:
@@ -192,6 +189,6 @@ if __name__ == '__main__':
     model = get_model(input_shape, args.lr, args.lr_decay)
     print('Learning rate: %s' % (args.lr))
     print('Learning rate decay: %s' % (args.lr_decay))
-    train_model(model, xy_train, xy_test, args.tensorboard_dir,
+    train_model(model, xy_train, xy_test, tensorboard_dir,
                 epochs=args.epochs,
                 data_augmentation=args.augment_data)

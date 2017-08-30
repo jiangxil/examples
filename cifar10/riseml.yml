@@ -2,7 +2,6 @@ project: cifar10-example
 train:
   framework: tensorflow
   tensorflow:
-    distributed: false
     tensorboard: true
   image:
     name: tensorflow/tensorflow:1.2.1-gpu
@@ -13,4 +12,4 @@ train:
     mem: 4096
     gpus: 1
   run:
-    - python cifar10.py --epochs 20 --tensorboard-dir $OUTPUT_DIR
+    - python cifar10.py --epochs 20
