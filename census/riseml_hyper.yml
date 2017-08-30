@@ -20,4 +20,4 @@ train:
       - 32
   concurrency: 2
   run:
-    - python run.py --num-epochs {{num-epochs}} --num-layers 4 --embedding-size {{embedding-size}}  --verbosity INFO --job-dir $OUTPUT_DIR
+    - python run.py --num-epochs {{num-epochs}} --num-layers 4 --embedding-size {{embedding-size}}  --verbosity INFO

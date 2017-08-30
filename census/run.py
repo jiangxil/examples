@@ -148,7 +148,7 @@ if __name__ == '__main__':
   )
   parser.add_argument(
       '--job-dir',
-      help='GCS location to write checkpoints and export models',
+      help='location to write checkpoints and export models',
       default=os.environ.get("OUTPUT_DIR"),
   )
 
