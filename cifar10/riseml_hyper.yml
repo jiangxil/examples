@@ -6,11 +6,11 @@ train:
   image:
     name: tensorflow/tensorflow:1.2.1-gpu
     install: 
-    - pip install scipy
+    - pip install -r requirements.txt
   resources:
     cpus: .2
     mem: 496
-    gpus: 0
+    gpus: 1
   parameters:
     lr:
       - 0.0001
@@ -21,6 +21,9 @@ train:
     epochs:
       - 2
       - 3
-  concurrency: 2
+      - 4
+      - 5
+      - 6
+  concurrency: 3
   run:
     - python cifar10.py --epochs {{epochs}} --lr {{lr}} --lr-decay {{lr-decay}}

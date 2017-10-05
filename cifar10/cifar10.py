@@ -20,21 +20,7 @@ import os
 import pickle
 import numpy as np
 import argparse
-
-
-def report_result(**kwargs):
-    import requests
-    import json
-    experiment_id = os.environ.get('RISEML_EXPERIMENT_ID')
-    if experiment_id:
-        try:
-            r = requests.post('http://api-service/experiments/%s/result' % experiment_id,
-                              data = {'result': json.dumps(kwargs)})
-            r.raise_for_status()
-        except requests.exceptions.RequestException as e:
-            print('Results not reported: %s' % e)
-    else:
-        print('Results not reported. Can only report inside running job environment.')
+import riseml
 
 
 def download_data(num_classes=10):
@@ -164,7 +150,7 @@ def train_model(model, xy_train, xy_test,
                                             steps=x_test.shape[0] // batch_size)
 
         print('Model Accuracy = %.2f' % (evaluation[1]))
-        report_result(accuracy=evaluation[1])
+        riseml.report_result(accuracy=evaluation[1])
 
 
 def save_model(model, save_dir, filename='keras_cifar10_trained_model.h5'):

@@ -4,8 +4,9 @@ train:
   tensorflow:
     tensorboard: true
   image:
-    name: tensorflow/tensorflow:1.2.1
+    name: tensorflow/tensorflow:1.2.1-gpu
     install: 
+    - apt-get update && apt-get install -y git
     - pip install -r requirements.txt
   resources:
     cpus: 0.3
