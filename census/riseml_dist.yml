@@ -16,6 +16,6 @@ train:
   resources:
     cpus: 0.2
     mem: 128
-    gpus: 0
+    gpus: 1
   run:
     - python run.py --num-epochs 5 --num-layers 4 --embedding-size 32  --verbosity INFO --job-dir $OUTPUT_DIR

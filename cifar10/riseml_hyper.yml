@@ -8,9 +8,9 @@ train:
     install: 
     - pip install scipy
   resources:
-    cpus: 2
-    mem: 4096
-    gpus: 1
+    cpus: .2
+    mem: 496
+    gpus: 0
   parameters:
     lr:
       - 0.0001

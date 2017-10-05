@@ -4,12 +4,12 @@ train:
   tensorflow:
     tensorboard: true
   image:
-    name: tensorflow/tensorflow:1.2.1-gpu
+    name: tensorflow/tensorflow:1.2.1
     install: 
-    - pip install scipy
+    - pip install -r requirements.txt
   resources:
-    cpus: 2
-    mem: 4096
+    cpus: 0.3
+    mem: 496
     gpus: 1
   run:
-    - python cifar10.py --epochs 20
+    - python cifar10.py --epochs 2
