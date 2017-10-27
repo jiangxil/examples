@@ -1,4 +1,4 @@
 scipy==0.19.1
 requests
-git+https://github.com/riseml/riseml-python.git@0f3387e040dfcfcf6ebf8a295a715913f76e8a7b#egg=riseml
 h5py
+git+https://github.com/riseml/client-python.git@5e8f0f33782a0072b5442f1a69d20dcffe883066#egg=riseml
