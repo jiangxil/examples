@@ -1,11 +1,7 @@
 project: cifar10-example
 train:
   framework: tensorflow
-  tensorflow:
-    tensorboard: true
-  image:
-    name: tensorflow/tensorflow:1.2.1-gpu
-    install: 
+  install: 
     - pip install -r requirements.txt
   resources:
     cpus: .2
