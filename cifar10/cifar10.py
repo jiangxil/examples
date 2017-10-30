@@ -153,9 +153,7 @@ def train_model(model, xy_train, xy_test,
         riseml.report_result(accuracy=evaluation[1])
 
 
-def save_model(model, save_dir, filename='keras_cifar10_trained_model.h5'):
-    save_dir = os.path.join(os.getcwd(), 'saved_models')
-
+def save_model(model, save_dir, model_name='keras_model.h5'):
     # Save model and weights
     if not os.path.isdir(save_dir):
         os.makedirs(save_dir)
@@ -194,3 +192,4 @@ if __name__ == '__main__':
     train_model(model, xy_train, xy_test, tensorboard_dir,
                 epochs=args.epochs,
                 data_augmentation=args.augment_data)
+    save_model(model, '/output')
