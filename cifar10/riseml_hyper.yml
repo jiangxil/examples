@@ -1,15 +1,14 @@
 project: cifar10-example
 train:
-  image:
-    name: tensorflow/tensorflow:1.2.1-gpu
-    install: 
-    - apt-get update && apt-get install -y curl git
-    - pip install -r requirements.txt
   framework: tensorflow
   tensorflow:
     tensorboard: true
+    version: 1.2.1
+  install: 
+    - apt-get update && apt-get install -y curl git
+    - pip install -r requirements.txt
   resources:
-    cpus: 4
+    cpus: 3
     mem: 4096
     gpus: 1
   parameters:
