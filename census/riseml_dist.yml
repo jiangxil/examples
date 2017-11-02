@@ -1,7 +1,5 @@
 project: census-example
 train:
-  image:
-    name: tensorflow/tensorflow:1.2.0
   framework: tensorflow
   tensorflow:
     distributed:
@@ -16,6 +14,6 @@ train:
   resources:
     cpus: 0.2
     mem: 128
-    gpus: 1
+    gpus: 0
   run:
     - python run.py --num-epochs 5 --num-layers 4 --embedding-size 32  --verbosity INFO --job-dir $OUTPUT_DIR
