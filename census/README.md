@@ -3,7 +3,7 @@
 This example uses a simple Tensorflow model to predict income based on census data.
 The code is based on [this example](https://github.com/GoogleCloudPlatform/cloudml-samples/tree/master/census) by Google Cloud ML.
 
-The example example supports:
+The example supports:
  - training on CPU (**no GPU**)
  - distributed training with Tensorflow
 
