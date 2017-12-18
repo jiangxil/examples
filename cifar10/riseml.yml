@@ -11,4 +11,4 @@ train:
     mem: 4096
     gpus: 1
   run:
-    - python cifar10.py /data/cifar --epochs 2
+    - python cifar10.py --epochs 2

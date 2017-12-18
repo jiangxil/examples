@@ -25,4 +25,4 @@ train:
         step: 1
   concurrency: 12
   run:
-    - python cifar10.py /data/cifar --epochs {{epochs}} --lr {{lr}} --lr-decay {{lr-decay}}
+    - python cifar10.py --epochs {{epochs}} --lr {{lr}} --lr-decay {{lr-decay}}
