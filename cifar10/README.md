@@ -1,11 +1,13 @@
 
-# Train a Keras model on CIFAR-10 data
+# CIFAR-10 Example
 
-Supports
+This example uses a simple Keras model (with Tensorflow backend) to train on CIFAR-10 data.
+
+It supports:
  - training on CPU or a *single* GPU
  - hyperparemeter search
 
-To perform a training run:
+To perform a training run, execute (in this directory):
 ```
 riseml train
 ```
@@ -21,7 +23,7 @@ Feel free to adjust the `riseml.yml` to your needs, e.g., change resource requir
 
 ## Download Training Data
 
-To download trainig data, create a `cifar` folder on your RiseML `data` volume:
+To download training data, create a `cifar` folder on your RiseML `data` volume:
 
 ```
 mkdir cifar
@@ -31,5 +33,5 @@ tar xvfz cifar-10-python.tar.gz --strip=1
 Adjust the run command in the `riseml.yml` and pass the directory `/data/cifar` as first argument.
 For example:
 ```
-python cifar10.py /data/cifar --lr 0.0001 --lr-decay 0.000001 --epochs 2 --tensorboard-dir 3
+python cifar10.py /data/cifar --epochs 2
 ```
