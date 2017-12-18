@@ -1,6 +1,9 @@
 # Example Projects for RiseML
+<img src="https://cdn.riseml.com/img/banner_github_blueprint.png" />
 
-This repository contains example projects for RiseML which support different features of RiseML.
+[RiseML](https://riseml.com) is a scalable deep learning environment for GPU servers based on [Kubernetes](https://kubernetes.io)
+
+This repository contains example projects for RiseML to show the different features.
 
 ## [CIFAR-10](cifar10)
 
