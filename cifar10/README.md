@@ -1,7 +1,7 @@
 
 # CIFAR-10 Example
 
-This example uses a simple Keras model (with Tensorflow backend) to train on CIFAR-10 data.
+This example uses a simple [Keras](https://keras.io/) model (with Tensorflow backend, based on [this example](https://github.com/keras-team/keras/blob/master/examples/cifar10_cnn.py)) to train an image classification model on [CIFAR-10](https://www.cs.toronto.edu/~kriz/cifar.html).
 
 It supports:
  - training on CPU or a *single* GPU
