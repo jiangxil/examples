@@ -8,19 +8,19 @@ It gets down to 0.65 test logloss in 25 epochs, and down to 0.55 after 50 epochs
 '''
 
 from __future__ import print_function
-from tensorflow.contrib.keras.python import keras
-from tensorflow.contrib.keras.python.keras.preprocessing.image import ImageDataGenerator 
-from tensorflow.contrib.keras.python.keras.datasets import cifar10
-from tensorflow.contrib.keras.python.keras.datasets.cifar import load_batch
-from tensorflow.contrib.keras.python.keras.models import Sequential
-from tensorflow.contrib.keras.python.keras.layers import Dense, Dropout, Activation, Flatten
-from tensorflow.contrib.keras.python.keras.layers import Conv2D, MaxPooling2D
-
+import keras
 import os
 import pickle
 import numpy as np
 import argparse
 import riseml
+
+from keras.datasets.cifar import load_batch
+from keras.datasets import cifar10
+from keras.preprocessing.image import ImageDataGenerator
+from keras.models import Sequential
+from keras.layers import Dense, Dropout, Activation, Flatten
+from keras.layers import Conv2D, MaxPooling2D
 
 
 def download_data(num_classes=10):
@@ -114,6 +114,7 @@ def train_model(model, xy_train, xy_test,
                 batch_size=batch_size,
                 epochs=epochs,
                 validation_data=(x_test, y_test),
+                verbose=2,
                 shuffle=True)
     else:
         print('Using real-time data augmentation.')
@@ -141,6 +142,7 @@ def train_model(model, xy_train, xy_test,
                                         batch_size=batch_size),
                             steps_per_epoch=x_train.shape[0] // batch_size,
                             epochs=epochs,
+                            verbose=2,
                             callbacks=[tb_cb],
                             validation_data=(x_test, y_test))
 

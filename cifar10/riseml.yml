@@ -2,7 +2,7 @@ project: cifar10
 train:
   framework: tensorflow
   tensorflow:
-    version: 1.2.1
+    version: 1.5.0
     tensorboard: true
   install: 
     - apt-get update && apt-get install -y curl git
